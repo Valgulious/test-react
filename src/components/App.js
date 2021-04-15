@@ -1,13 +1,13 @@
 import '../css/App.css';
 import Header from "./header/Header.jsx";
 import HeaderIcon from "./HeaderIcon.jsx";
-import Aside from "./aside/Aside.jsx";
 import Main from "./main/Main.jsx";
 import logo from "../img/logo.svg";
 import bell from "../img/bell.svg";
 import logout from "../img/logout.svg";
 import styled from "@emotion/styled";
 import {css, Global} from "@emotion/react";
+import AsideWrapper from "./aside/AsideWrapper.jsx";
 
 
 function App() {
@@ -79,7 +79,7 @@ function App() {
           </div>
       </Header>
       <div className='inline-block'>
-          <Aside/>
+          <AsideWrapper/>
           <Main/>
       </div>
     </>
