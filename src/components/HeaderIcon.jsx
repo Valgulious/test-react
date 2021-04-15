@@ -4,6 +4,7 @@ const HeaderIcon = styled.img`
         width: 20px;
         height: 20px;
         padding: 5px;
+        margin: 0 5px;
         border-radius: 2px;
         cursor: pointer;
         &:hover {
