@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import Profile from "./Profile.jsx";
+import Hr from "../Hr.jsx"
 
 const MainWrapper = () => {
 
@@ -10,13 +12,6 @@ const MainWrapper = () => {
     const MainNav = styled.nav`
         display: flex;
         max-height: 40px;
-    `
-
-    const MainHr = styled.hr`
-        background-color: #E4E7EB;
-        border: 0px none;
-        height: 1px;
-        clear:both;
     `
 
     const MainNavLi = styled.li`
@@ -47,17 +42,8 @@ const MainWrapper = () => {
         }
         
         &:hover::after {
-            transform: scaleX(1);
+            transform: scaleX(1.5);
         }
-    `
-
-    const Grid = styled.div`
-        display: grid;
-        grid-template: 500px / 1fr 3fr
-    `
-
-    const TestDiv = styled.section`
-        background-color: ${props => props.color};
     `
 
     return (
@@ -67,11 +53,8 @@ const MainWrapper = () => {
                 <MainNavLi>Account</MainNavLi>
                 <MainNavLi>Price Plans</MainNavLi>
             </MainNav>
-            <MainHr/>
-            <Grid>
-                <TestDiv color='gray'/>
-                <TestDiv color='blue'/>
-            </Grid>
+            <Hr/>
+            <Profile/>
         </Main>
     )
 }

@@ -1,13 +1,13 @@
 import '../css/App.css';
 import Header from "./header/Header.jsx";
 import HeaderIcon from "./HeaderIcon.jsx";
-import Main from "./main/Main.jsx";
 import logo from "../img/logo.svg";
 import bell from "../img/bell.svg";
 import logout from "../img/logout.svg";
 import styled from "@emotion/styled";
 import {css, Global} from "@emotion/react";
 import AsideWrapper from "./aside/AsideWrapper.jsx";
+import MainWrapper from "./main/MainWrapper.jsx";
 
 
 function App() {
@@ -51,6 +51,10 @@ function App() {
         color: #CDD1EA;
     `
 
+    const Inline = styled.div`
+        display: flex;
+    `
+
   return (
     <>
         <Global
@@ -78,10 +82,10 @@ function App() {
               <HeaderIcon src={logout} alt='logout'/>
           </div>
       </Header>
-      <div className='inline-block'>
+      <Inline>
           <AsideWrapper/>
-          <Main/>
-      </div>
+          <MainWrapper/>
+      </Inline>
     </>
   );
 }
