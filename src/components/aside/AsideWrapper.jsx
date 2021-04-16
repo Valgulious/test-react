@@ -13,6 +13,7 @@ const AsideWrapper = () => {
     const Aside = styled.aside`
         width: 15%;
         box-shadow: 1px 0 3px rgba(0, 0, 0, 0.25);
+        z-index: 1;
     `
 
     const AvatarWrapper = styled.div`
@@ -24,6 +25,8 @@ const AsideWrapper = () => {
 
     const AvatarImg = styled.img`
         border-radius: 50%;
+        width: 100px;
+        height: 100px;
     `
 
     const Username = styled.h3`
@@ -126,7 +129,7 @@ const AsideWrapper = () => {
                         <AsideListItem>Icons & Images</AsideListItem>
                     </AsideLI>
                 </ul>
-                <div><AsideHR/></div>
+                <AsideHR/>
                 <div>
                     <Support>Support</Support>
                     <AsideLI>
