@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import Hr from "../Hr.jsx"
 import ProfileSection from "./ProfileSection.jsx";
 import SettingsForm from "./forms/SettingsForm.jsx";
+import NotificationsForm from "./forms/NotificationsForm.jsx";
 import portlet from '../../img/portlet.jpg'
 
 const Profile = () => {
@@ -105,6 +106,7 @@ const Profile = () => {
             </Column>
             <Column>
                 <SettingsForm/>
+                <NotificationsForm/>
             </Column>
         </Grid>
     )

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 const FormButton = ({buttonText, isDisabled}) => {
 
     const Button = styled.input`
-        padding: 10px;
+        padding: 10px 20px;
         outline: none;
         border: none;
         cursor: pointer;
@@ -21,7 +21,7 @@ const FormButton = ({buttonText, isDisabled}) => {
         
         transition: transform 100ms ease;
         
-        &:hover {
+        &:not(:disabled):hover {
             transform: scale(0.95, 1)
         }
         
@@ -33,9 +33,9 @@ const FormButton = ({buttonText, isDisabled}) => {
             cursor: default;
         }
         
-        &:disabled:hover {
-            transform: none;
-        }
+        // &:disabled:hover {
+        //     transform: none;
+        // }
     `
 
     return(

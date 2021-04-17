@@ -12,7 +12,8 @@ const SettingsForm = () => {
         // width: 50vw;
     `
 
-    const InputsWrapper = styled.div`
+    const Fieldset = styled.fieldset`
+        border: none;
         display: flex;
         flex-wrap: wrap;
         padding-bottom: 10px;
@@ -23,14 +24,14 @@ const SettingsForm = () => {
             <Form>
                 <FormHeader title='Basic Profile' info='The information can be edited from your profile page'/>
                 <Hr/>
-                <InputsWrapper>
+                <Fieldset>
                     <SettingsFormInput type='text' placeholder='First Name' isRequired={true}/>
                     <SettingsFormInput type='text' placeholder='Last Name' isRequired={true}/>
                     <SettingsFormInput type='email' placeholder='Email' isRequired={true}/>
                     <SettingsFormInput type='tel' placeholder='Phone Number' isRequired={false}/>
                     <SettingsFormInput type='text' placeholder='City' isRequired={false}/>
                     <SettingsFormInput type='text' placeholder='Country' isRequired={false}/>
-                </InputsWrapper>
+                </Fieldset>
                 <Hr/>
                 <FormFooter buttonText='SAVE SETTINGS' buttonIsDisabled={true}/>
             </Form>
