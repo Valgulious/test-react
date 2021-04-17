@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
 import check from '../../../img/check.svg'
 
-const NotificationsFormInput = ({inputId, name, text, value}) => {
+const NotificationsFormInput = ({inputId, name, text, value, subtext}) => {
 
     const Input = styled.input`
         position: absolute;
@@ -70,9 +70,13 @@ const NotificationsFormInput = ({inputId, name, text, value}) => {
                 <Input id={inputId} type='checkbox' name={name} value={value.toLowerCase()}/>
                 <span>{text}</span>
             </Label>
-            <span>For your mobile or tablet device</span>
+            {subtext ? <span>{subtext}</span> : ''}
         </>
     )
+}
+
+NotificationsFormInput.defaultProps = {
+    subtext: ''
 }
 
 NotificationsFormInput.propTypes = {

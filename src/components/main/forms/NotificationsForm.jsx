@@ -37,7 +37,7 @@ const NotificationsForm = () => {
                         <FieldsetSectionTitle>Notifications</FieldsetSectionTitle>
                         <NotificationsFormInput text='Email' value='email' name='notifications' inputId='nEmail'/>
                         <NotificationsFormInput text='Push Notifications' value='pushNotifications' name='notifications'
-                                                inputId='nPushNotifications'/>
+                                                inputId='nPushNotifications' subtext='For your mobile or tablet device'/>
                         <NotificationsFormInput text='Text Messages' value='textMessages' name='notifications'
                                                 inputId='nTextMessages'/>
                         <NotificationsFormInput text='Phone Calls' value='phoneCalls' name='notifications'
