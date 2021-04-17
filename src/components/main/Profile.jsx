@@ -1,22 +1,18 @@
 import styled from "@emotion/styled";
 import Hr from "../Hr.jsx"
+import ProfileSection from "./ProfileSection.jsx";
+import SettingsForm from "./forms/SettingsForm.jsx";
 import portlet from '../../img/portlet.jpg'
 
 const Profile = () => {
 
     const Grid = styled.div`
         display: grid;
-        grid-template: 500px / 400px 1fr
+        grid-template: 1fr / 400px 1fr
     `
 
     const Column = styled.div`
-        padding: 20px;
-    `
-
-    const ProfilePortlet = styled.section`
-        border-radius: 5px;
-        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.25);
-        background-color: white;
+        padding: 20px 10px 20px 20px;
     `
 
     const ProfileSectionDiv = styled.div`
@@ -91,7 +87,7 @@ const Profile = () => {
     return(
         <Grid>
             <Column>
-                <ProfilePortlet>
+                <ProfileSection>
                     <ProfileSectionDiv>
                         <PortletInfo>
                             <PortletH3>Adrian Stefan</PortletH3>
@@ -105,10 +101,10 @@ const Profile = () => {
                         <PortletButton color='#1665D8'>UPLOAD PICTURE</PortletButton>
                         <PortletButton color='#425A70'>REMOVE PICTURE</PortletButton>
                     </PortletButtons>
-                </ProfilePortlet>
+                </ProfileSection>
             </Column>
             <Column>
-                <h1>this is block</h1>
+                <SettingsForm/>
             </Column>
         </Grid>
     )
