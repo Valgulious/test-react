@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
 
 const FormButton = ({buttonText, isDisabled}) => {
@@ -42,6 +43,11 @@ const FormButton = ({buttonText, isDisabled}) => {
         <Button type='submit' value={buttonText} disabled={isDisabled}/>
     )
 
+}
+
+FormButton.propTypes = {
+    buttonText: PropTypes.string.isRequired,
+    isDisabled: PropTypes.bool
 }
 
 export default FormButton;

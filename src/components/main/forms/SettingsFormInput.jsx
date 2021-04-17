@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
 
 const SettingsFormInput = ({type, placeholder, isRequired}) => {
@@ -64,5 +65,11 @@ const SettingsFormInput = ({type, placeholder, isRequired}) => {
     )
 
 };
+
+SettingsFormInput.propTypes = {
+    type: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    isRequired: PropTypes.bool
+}
 
 export default SettingsFormInput

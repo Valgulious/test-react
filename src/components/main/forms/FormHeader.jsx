@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
 
 
@@ -32,6 +33,11 @@ const FormHeader = ({title, info}) => {
         </Header>
     )
 
+}
+
+FormHeader.propTypes = {
+    title: PropTypes.string.isRequired,
+    info: PropTypes.string.isRequired
 }
 
 export default FormHeader

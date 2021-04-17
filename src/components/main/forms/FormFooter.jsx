@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
 import FormButton from "./FormButton.jsx";
 
@@ -14,6 +15,11 @@ const FormFooter = ({buttonText, buttonIsDisabled}) => {
         </Footer>
     )
 
+}
+
+FormFooter.propTypes = {
+    buttonText: PropTypes.string.isRequired,
+    buttonIsDisabled: PropTypes.bool
 }
 
 export default FormFooter
