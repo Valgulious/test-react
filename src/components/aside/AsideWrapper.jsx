@@ -19,7 +19,6 @@ const AsideWrapper = () => {
     const AvatarWrapper = styled.div`
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
     `
 
@@ -27,9 +26,11 @@ const AsideWrapper = () => {
         border-radius: 50%;
         width: 100px;
         height: 100px;
+        margin: 20px 0 10px 0;
     `
 
     const Username = styled.h3`
+        margin: 5px;
         font-weight: normal;
         font-size: 16px;
         line-height: 20px;
@@ -39,6 +40,7 @@ const AsideWrapper = () => {
     `
 
     const UserPosition = styled.p`
+        margin-bottom: 20px;
         font-weight: normal;
         font-size: 12px;
         line-height: 16px;
@@ -50,13 +52,13 @@ const AsideWrapper = () => {
         background-color: #E4E7EB;
         border: 0px none;
         height: 1px;
-        width: 90%;
+        width: 100%;
         clear:both;
         margin: auto;
     `
 
-    const Support = styled.span`
-        margin: 24px 16px;
+    const Support = styled.p`
+        margin: 24px 16px 10px 16px;
         font-size: 13px;
         line-height: 15px;
         color: rgba(0, 0, 0, 0.328974);
@@ -77,8 +79,19 @@ const AsideWrapper = () => {
     const AsideLI = styled.li`
         list-style: none;
         padding: 10px 16px;
+        margin: 0 0 10px 0;
+        display: flex;
+        align-items: center;
+        tabindex: 1;
         
         &:hover {
+            background: #F6F9FD;
+            box-shadow: inset 3px 0px 0px #1665D8;
+            border-radius: 4px 0 0 4px;
+            cursor: pointer;
+        }
+        
+        &:focus {
             background: #F6F9FD;
             box-shadow: inset 3px 0px 0px #1665D8;
             border-radius: 4px 0 0 4px;
@@ -101,8 +114,8 @@ const AsideWrapper = () => {
                     <UserPosition>Brain Director</UserPosition>
                 </div>
             </AvatarWrapper>
-            <AsideHR/>
             <AsideNav>
+                <AsideHR/>
                 <ul>
                     <AsideLI>
                         <img id='dash' src={dashboard} alt='dashboard'/>

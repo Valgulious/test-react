@@ -11,9 +11,8 @@ const NotificationsFormInput = ({inputId, name, text, value}) => {
     `
 
     const Label = styled.label`
-        display: inline-flex;
-        align-items: center;
-        user-select: none;
+        display: flex;
+        align-items: start;
         margin: 20px 0 0 0;
         
         font-weight: normal;
@@ -41,11 +40,6 @@ const NotificationsFormInput = ({inputId, name, text, value}) => {
             border-color: #b3d7ff;
         }
         
-        & > input:not(:disabled):active + span::before {
-            background-color: #b3d7ff;
-            border-color: #b3d7ff;
-        }
-        
         & > input:focus + span::before {
             box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
         }
@@ -60,13 +54,24 @@ const NotificationsFormInput = ({inputId, name, text, value}) => {
             background-image: url(${check});
             background-size: 100%;
         }
+        
+        & + span {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            color: #66788A;
+            margin-left: 30px;
+        }
     `
 
     return(
-        <Label htmlFor={inputId}>
-            <Input id={inputId} type='checkbox' name={name} value={value.toLowerCase()}/>
-            <span>{text}</span>
-        </Label>
+        <>
+            <Label htmlFor={inputId}>
+                <Input id={inputId} type='checkbox' name={name} value={value.toLowerCase()}/>
+                <span>{text}</span>
+            </Label>
+            <span>For your mobile or tablet device</span>
+        </>
     )
 }
 

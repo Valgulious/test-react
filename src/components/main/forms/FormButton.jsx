@@ -23,7 +23,11 @@ const FormButton = ({buttonText, isDisabled}) => {
         transition: transform 100ms ease;
         
         &:not(:disabled):hover {
-            transform: scale(0.95, 1)
+            transform: scale(1.05)
+        }
+        
+        &:not(:disabled):focus {
+            transform: scale(1.05)
         }
         
         &:disabled {

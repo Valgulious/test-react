@@ -33,7 +33,7 @@ const SettingsForm = () => {
                     <SettingsFormInput type='text' placeholder='Country' isRequired={false}/>
                 </Fieldset>
                 <Hr/>
-                <FormFooter buttonText='SAVE SETTINGS' buttonIsDisabled={true}/>
+                <FormFooter buttonText='SAVE SETTINGS' buttonIsDisabled={false}/>
             </Form>
         </ProfileSection>
     )

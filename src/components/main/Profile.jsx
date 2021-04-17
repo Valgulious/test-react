@@ -9,11 +9,11 @@ const Profile = () => {
 
     const Grid = styled.div`
         display: grid;
-        grid-template: 1fr / 400px 1fr
+        grid-template: 1fr / 30% 60% 1fr
     `
 
     const Column = styled.div`
-        padding: 20px 10px 20px 20px;
+        padding: 20px 0 20px 0;
     `
 
     const ProfileSectionDiv = styled.div`
@@ -35,7 +35,8 @@ const Profile = () => {
         height: 140px;
     `
 
-    const PortletH3 = styled.h3`
+    const PortletName = styled.h3`
+        margin-bottom: 10px;
         font-size: 24px;
         font-style: medium;
         line-height: 28px;
@@ -70,7 +71,7 @@ const Profile = () => {
     const PortletButton = styled.button`
     
         &:hover {
-            opacity: 50%;
+            transform: scale(1.05)
         }
     
         padding: 0;
@@ -91,7 +92,7 @@ const Profile = () => {
                 <ProfileSection>
                     <ProfileSectionDiv>
                         <PortletInfo>
-                            <PortletH3>Adrian Stefan</PortletH3>
+                            <PortletName>Adrian Stefan</PortletName>
                             <PortletCity>Rm. Valcea, Romania</PortletCity>
                             <PortletTime>4:32PM (GMT-4)</PortletTime>
                         </PortletInfo>

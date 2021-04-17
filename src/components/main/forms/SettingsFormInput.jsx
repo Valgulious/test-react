@@ -8,7 +8,7 @@ const SettingsFormInput = ({type, placeholder, isRequired}) => {
         margin: 15px 5px 5px 20px;
         padding-left: 15px;
         width: 20vw;
-        height: 6vh;
+        height: 56px;
         border: 1px solid rgba(0, 0, 0, 0.32);
         box-sizing: border-box;
         border-radius: 4px;
