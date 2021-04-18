@@ -13,10 +13,13 @@ const HeaderWrapper = () => {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-height: 6vh;
+        max-height: 64px;
         
         & a {
             text-decoration: none;
+            @media (max-width: 575px) {
+                margin-left: 50px;
+            }
         }
     `
 
@@ -26,7 +29,7 @@ const HeaderWrapper = () => {
         align-items: center;
     `
 
-    const Title = styled.div`
+    const Title = styled.p`
         color: white;
         font-weight: 500;
         font-size: 20px;

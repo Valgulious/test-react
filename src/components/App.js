@@ -1,4 +1,3 @@
-import '../css/App.css';
 import HeaderWrapper from "./header/HeaderWrapper.jsx";
 import styled from "@emotion/styled";
 import {css, Global} from "@emotion/react";
@@ -10,6 +9,7 @@ function App() {
 
     const Inline = styled.div`
         display: flex;
+        position: relative;
     `
 
   return (

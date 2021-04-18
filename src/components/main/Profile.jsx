@@ -1,22 +1,72 @@
 import styled from "@emotion/styled";
 import Hr from "../Hr.jsx"
-import ProfileSection from "./ProfileSection.jsx";
 import SettingsForm from "./forms/SettingsForm.jsx";
 import NotificationsForm from "./forms/NotificationsForm.jsx";
 import portlet from '../../img/portlet.jpg'
 
 const Profile = () => {
 
-    const Grid = styled.div`
+    const breakpoints = [576, 768, 992, 1200, 1430, 1750, 2250];
+
+    const mq = breakpoints.map(
+        bp => `@media (min-width: ${bp}px)`
+    )
+
+    const Grid = styled.div`    
+        
         display: grid;
-        grid-template: 1fr / 30% 60% 1fr
+        
+        ${mq[0]} {
+            grid-template: 1fr / 1fr
+        }
+        
+        ${mq[2]} {
+            grid-template: 1fr / 40% 50%
+        }
+        
+        ${mq[3]} {
+            grid-template: 1fr / 35% 60%
+        }
+        
+        ${mq[4]} {
+            grid-template: 1fr / 30% 60%
+        }
+        
+        ${mq[5]} {
+            grid-template: 1fr / 25% 55% 1fr
+        }
+        
+        ${mq[6]} {
+            max-width: 80%;
+            margin: auto;
+            grid-template: 1fr / 25% 55% 1fr
+        }
     `
 
     const Column = styled.div`
-        padding: 20px 0 20px 0;
+        padding: 20px 20px 20px 0;
     `
 
-    const ProfileSectionDiv = styled.div`
+    const PortletSection = styled.section`
+        border-radius: 5px;
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.25);
+        background-color: white;
+        margin: 20px 0 0 20px;
+        
+        ${mq[0]} {
+            width: 95%;
+        }
+        
+        ${mq[1]} {
+            width: 70%;
+        }
+        
+        ${mq[2]} {
+            width: 100%;
+        }
+    `
+
+    const PortletSectionDiv = styled.div`
         padding: 24px;
         display: flex;
         justify-content: space-between;
@@ -35,10 +85,11 @@ const Profile = () => {
         height: 140px;
     `
 
-    const PortletName = styled.h3`
+    const PortletName = styled.p`
         margin-bottom: 10px;
+        font-style: normal;
+        font-weight: 500;
         font-size: 24px;
-        font-style: medium;
         line-height: 28px;
         letter-spacing: -0.06px;
         color: #212529;
@@ -89,21 +140,21 @@ const Profile = () => {
     return(
         <Grid>
             <Column>
-                <ProfileSection>
-                    <ProfileSectionDiv>
+                <PortletSection>
+                    <PortletSectionDiv>
                         <PortletInfo>
                             <PortletName>Adrian Stefan</PortletName>
                             <PortletCity>Rm. Valcea, Romania</PortletCity>
                             <PortletTime>4:32PM (GMT-4)</PortletTime>
                         </PortletInfo>
                         <PortletImg src={portlet} alt='portlet image'/>
-                    </ProfileSectionDiv>
+                    </PortletSectionDiv>
                     <Hr/>
                     <PortletButtons>
                         <PortletButton color='#1665D8'>UPLOAD PICTURE</PortletButton>
                         <PortletButton color='#425A70'>REMOVE PICTURE</PortletButton>
                     </PortletButtons>
-                </ProfileSection>
+                </PortletSection>
             </Column>
             <Column>
                 <SettingsForm/>

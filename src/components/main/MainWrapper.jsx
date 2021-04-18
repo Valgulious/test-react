@@ -7,8 +7,17 @@ import {useState} from "react";
 const MainWrapper = () => {
 
     const Main = styled.main`
+        min-height: 94.5vh;
         width: 85%;
         background-color: #f9fafb;
+        
+        @media (min-width: 1200px) {
+            width: 100%;
+        }
+        
+        @media (max-width: 1199px) {
+            width: 100%;
+        }
     `
 
     const MainNav = styled.nav`

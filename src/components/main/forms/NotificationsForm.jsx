@@ -19,7 +19,7 @@ const NotificationsForm = () => {
         flex-direction: column;
     `
 
-    const FieldsetSectionTitle = styled.h3`
+    const FieldsetSectionTitle = styled.h5`
         color: #3A3B3F;
         font-weight: 500;
         font-size: 16px;

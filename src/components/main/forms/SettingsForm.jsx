@@ -86,10 +86,29 @@ const SettingsForm = () => {
         padding-bottom: 10px;
     `
 
+    const breakpoints = [576, 768, 992, 1430];
+
+    const mq = breakpoints.map(
+        bp => `@media (min-width: ${bp}px)`
+    )
+
     const InputWrapper = styled.div`
+        width: 95%;
         display: flex;
         flex-direction: column;
         position: relative;
+        
+        ${mq[0]} {
+            width: 49%;
+        }
+        
+        ${mq[2]} {
+            width: 100%;
+        }
+        
+        ${mq[3]} {
+            width: auto;
+        }
     `
 
     const InputSpan = styled.span`

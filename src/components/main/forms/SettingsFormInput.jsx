@@ -5,11 +5,16 @@ import {forwardRef} from "react";
 
 const SettingsFormInput = forwardRef(({id, name, type, placeholder, isRequired, onChange, onBlur}, ref) => {
 
+    const breakpoints = [576, 768, 992, 1430];
+
+    const mq = breakpoints.map(
+        bp => `@media (min-width: ${bp}px)`
+    )
+
     const Input = styled.input`
         
         margin: 15px 5px 5px 20px;
         padding-left: 15px;
-        width: 328px;
         height: 56px;
         border: 1px solid rgba(0, 0, 0, 0.32);
         box-sizing: border-box;
@@ -32,7 +37,20 @@ const SettingsFormInput = forwardRef(({id, name, type, placeholder, isRequired, 
         
         &:required:focus ~ span {
             color: #1665D8;
-        }        
+        }  
+        
+         ${mq[2]} {
+           width: 328px;
+        }
+         
+         ${mq[2]} {
+            width: 90%;
+        }
+        
+        ${mq[3]} {
+            width: 328px;
+        }
+              
     `
 
     const Label = styled.label`

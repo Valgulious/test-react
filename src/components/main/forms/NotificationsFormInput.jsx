@@ -22,6 +22,8 @@ const NotificationsFormInput = ({inputId, name, text, value, subtext}) => {
         color: rgba(0, 0, 0, 0.6);
         
         & > span::before {
+            position: relative;
+            top: 0.3em;
             content: '';
             display: inline-block;
             width: 1em;
