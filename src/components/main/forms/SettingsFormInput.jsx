@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
+import {forwardRef} from "react";
 
-const SettingsFormInput = ({type, placeholder, isRequired}) => {
+
+const SettingsFormInput = forwardRef(({id, name, type, placeholder, isRequired, onChange, onBlur}, ref) => {
 
     const Input = styled.input`
         
         margin: 15px 5px 5px 20px;
         padding-left: 15px;
-        width: 20vw;
+        width: 328px;
         height: 56px;
         border: 1px solid rgba(0, 0, 0, 0.32);
         box-sizing: border-box;
@@ -24,52 +26,46 @@ const SettingsFormInput = ({type, placeholder, isRequired}) => {
             border: 2px solid #1665D8;
         }
         
-        // &:focus + span::before {
-        //     padding-button: 50px;
-        //     font-weight: normal;
-        //     font-size: 12px;
-        //     line-height: 16px;
-        //     letter-spacing: 0.4px;
-        //     color: #1665D8;
-        //     content: '${placeholder}';
-        // }
-        
-        &:required + span::after {
-            content: 'Please specify the ${placeholder}';
+        &:focus + label {
+            display: block;
         }
         
-        &:required:focus + span::after {
+        &:required:focus ~ span {
             color: #1665D8;
-        }           
+        }        
     `
 
-    const Span = styled.span`
-        margin-left: 30px;
+    const Label = styled.label`
         font-weight: normal;
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.4px;
-        color: rgba(0, 0, 0, 0.6);
+        color: #1665D8;
+        
+        display: none;
+        position: absolute;
+        top: 8px;
+        left: 30px;
+        background-color: white;
     `
 
-    const InputWrapper = styled.div`
-        display: flex;
-        flex-direction: column;
-    `
-
-    return(
-        <InputWrapper>
-            <Input type={type} placeholder={placeholder} required={isRequired}/>
-            <Span/>
-        </InputWrapper>
+    return (
+        <>
+            <Input ref={ref} id={id} name={name} type={type} placeholder={placeholder} required={isRequired}
+                   onChange={onChange} onBlur={onBlur}/>
+            <Label htmlFor={id}>{placeholder}</Label>
+        </>
     )
-
-};
+});
 
 SettingsFormInput.propTypes = {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
-    isRequired: PropTypes.bool
+    isRequired: PropTypes.bool,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func
 }
 
 export default SettingsFormInput

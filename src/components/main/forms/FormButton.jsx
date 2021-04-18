@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
+import {forwardRef} from "react";
 
-const FormButton = ({buttonText, isDisabled}) => {
+const FormButton = forwardRef(({buttonText, isDisabled}, ref) => {
 
     const Button = styled.input`
         padding: 10px 20px;
@@ -44,10 +45,10 @@ const FormButton = ({buttonText, isDisabled}) => {
     `
 
     return(
-        <Button type='submit' value={buttonText} disabled={isDisabled}/>
+        <Button ref={ref} type='submit' value={buttonText} disabled={isDisabled}/>
     )
 
-}
+})
 
 FormButton.propTypes = {
     buttonText: PropTypes.string.isRequired,
