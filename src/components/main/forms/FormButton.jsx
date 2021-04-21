@@ -11,7 +11,7 @@ const FormButton = forwardRef(({buttonText, isDisabled}, ref) => {
         cursor: pointer;
         color: white;
         background: #1665D8;
-        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         box-sizing: border-box;
         font-weight: 500;
@@ -38,10 +38,6 @@ const FormButton = forwardRef(({buttonText, isDisabled}, ref) => {
             box-shadow: none;
             cursor: default;
         }
-        
-        // &:disabled:hover {
-        //     transform: none;
-        // }
     `
 
     return(

@@ -4,6 +4,8 @@ import SettingsFormInput from "./SettingsFormInput.jsx";
 import FormHeader from "./FormHeader.jsx";
 import FormButton from "./FormButton.jsx";
 import Hr from '../../Hr.jsx'
+import Footer from "./Footer.jsx";
+import SubmitMessage from "./SubmitMessage.jsx";
 import {useRef} from "react";
 
 
@@ -118,21 +120,6 @@ const SettingsForm = () => {
         line-height: 16px;
         letter-spacing: 0.4px;
         color: rgba(0, 0, 0, 0.6);
-    `
-
-    const Footer = styled.footer`
-        padding: 20px;
-        display: flex;
-        align-items: center;
-    `
-
-    const SubmitMessage = styled.span`
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 16px;
-        letter-spacing: 0.4px;
-        
-        margin-left: 20px;
     `
 
     return (

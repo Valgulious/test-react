@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
 import check from '../../../img/check.svg'
+import {forwardRef} from "react";
 
-const NotificationsFormInput = ({inputId, name, text, value, subtext}) => {
+const NotificationsFormInput = forwardRef ((props, ref) => {
+
+    const {inputId, name, text, value, subtext, onChange} = props;
 
     const Input = styled.input`
         position: absolute;
@@ -69,13 +72,13 @@ const NotificationsFormInput = ({inputId, name, text, value, subtext}) => {
     return(
         <>
             <Label htmlFor={inputId}>
-                <Input id={inputId} type='checkbox' name={name} value={value.toLowerCase()}/>
+                <Input id={inputId} type='checkbox' name={name} value={value} onChange={onChange} ref={ref}/>
                 <span>{text}</span>
             </Label>
             {subtext ? <span>{subtext}</span> : ''}
         </>
     )
-}
+})
 
 NotificationsFormInput.defaultProps = {
     subtext: ''
@@ -84,8 +87,9 @@ NotificationsFormInput.defaultProps = {
 NotificationsFormInput.propTypes = {
     inputId: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired
+    value: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
 }
 
 export default NotificationsFormInput;
