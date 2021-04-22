@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
 import ProfileSection from "../ProfileSection.jsx";
-import SettingsFormInput from "./SettingsFormInput.jsx";
-import FormHeader from "./FormHeader.jsx";
-import FormButton from "./FormButton.jsx";
-import Hr from '../../Hr.jsx'
-import Footer from "./Footer.jsx";
-import SubmitMessage from "./SubmitMessage.jsx";
+import BasicProfileFormInput from "./BasicProfileFormInput.jsx";
+import FormHeader from "../FormHeader.jsx";
+import FormButton from "../FormButton.jsx";
+import Hr from '../../../../Hr.jsx'
+import Footer from "../Footer.jsx";
+import SubmitMessage from "../SubmitMessage.jsx";
 import PhoneInput from "./PhoneInput.jsx";
 import {useRef, useState} from "react";
 
 
-const SettingsForm = () => {
+const BasicProfileForm = () => {
 
     const [formReload, setFormReload] = useState(true);
 
@@ -124,31 +124,28 @@ const SettingsForm = () => {
                 <Hr/>
                 <Fieldset>
                     <InputWrapper>
-                        <SettingsFormInput ref={firstNameRef} id='firstName' name='firstName' type='text'
-                                           placeholder='First Name' isRequired={true}
-                                           onChange={handleChange} key='firstName'/>
+                        <BasicProfileFormInput ref={firstNameRef} id='firstName' name='firstName' type='text'
+                                               placeholder='First Name' isRequired={true} onChange={handleChange}/>
                         <InputSpan>Please specify the first name</InputSpan>
                     </InputWrapper>
                     <InputWrapper>
-                        <SettingsFormInput ref={lastNameRef} id='lastName' name='lastName' type='text'
-                                           placeholder='Last Name' isRequired={true} onChange={handleChange} key='lastName'/>
+                        <BasicProfileFormInput ref={lastNameRef} id='lastName' name='lastName' type='text'
+                                               placeholder='Last Name' isRequired={true} onChange={handleChange}/>
                         <InputSpan>Assistive text</InputSpan>
                     </InputWrapper>
                     <InputWrapper>
-                        <SettingsFormInput ref={emailRef} id='email' name='email' type='email' placeholder='Email'
-                                           isRequired={true} onChange={handleChange} onBlur={handleEmailBlur} key='email'/>
+                        <BasicProfileFormInput ref={emailRef} id='email' name='email' type='email' placeholder='Email'
+                                               isRequired={true} onChange={handleChange} onBlur={handleEmailBlur}/>
                         <InputSpan ref={emailSpanRef}>{''}</InputSpan>
                     </InputWrapper>
                     <InputWrapper>
-                        <PhoneInput id='phoneNumber' name='phoneNumber'
-                                    placeholder='Phone Number' key='phone'/>
+                        <PhoneInput id='phoneNumber' name='phoneNumber' placeholder='Phone Number'/>
                     </InputWrapper>
                     <InputWrapper>
-                        <SettingsFormInput id='city' name='city' type='text' placeholder='City' key='city'/>
+                        <BasicProfileFormInput id='city' name='city' type='text' placeholder='City'/>
                     </InputWrapper>
                     <InputWrapper>
-                        <SettingsFormInput id='country' name='country' type='text'
-                                           placeholder='Country' key='country'/>
+                        <BasicProfileFormInput id='country' name='country' type='text' placeholder='Country'/>
                     </InputWrapper>
                 </Fieldset>
                 <Hr/>
@@ -162,4 +159,4 @@ const SettingsForm = () => {
 
 }
 
-export default SettingsForm
+export default BasicProfileForm

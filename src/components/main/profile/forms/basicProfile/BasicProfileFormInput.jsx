@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {forwardRef} from "react";
 
 
-const SettingsFormInput = forwardRef(({id, name, type, placeholder, value, isRequired, onChange, onBlur}, ref) => {
+const BasicProfileFormInput = forwardRef(({id, name, type, placeholder, value, isRequired, onChange, onBlur}, ref) => {
 
     const breakpoints = [576, 768, 992, 1430];
 
@@ -76,7 +76,7 @@ const SettingsFormInput = forwardRef(({id, name, type, placeholder, value, isReq
     )
 });
 
-SettingsFormInput.propTypes = {
+BasicProfileFormInput.propTypes = {
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
@@ -86,4 +86,4 @@ SettingsFormInput.propTypes = {
     onBlur: PropTypes.func
 }
 
-export default SettingsFormInput
+export default BasicProfileFormInput

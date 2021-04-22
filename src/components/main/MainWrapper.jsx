@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import Profile from "./Profile.jsx";
+import Profile from "./profile/Profile.jsx";
 import Hr from "../Hr.jsx"
 // import AnotherTab from "./AnotherTab.jsx";
 import {lazy, useState} from "react";
@@ -22,12 +22,12 @@ const MainWrapper = () => {
         }
     `
 
-    const MainNav = styled.ul`
+    const Ul = styled.ul`
         display: flex;
         max-height: 40px;
     `
 
-    const MainNavLi = styled.li`
+    const Li = styled.li`
         list-style: none;
         padding: 5px 10px;
         margin: 5px 10px;
@@ -67,11 +67,11 @@ const MainWrapper = () => {
     return (
         <Main>
             <nav>
-                <MainNav>
-                    <MainNavLi id='profile' isActive={tab === 'profile'} onClick={handleTabClick}>Profile</MainNavLi>
-                    <MainNavLi id='account' isActive={tab === 'account'} onClick={handleTabClick}>Account</MainNavLi>
-                    <MainNavLi id='price' isActive={tab === 'price'} onClick={handleTabClick}>Price Plans</MainNavLi>
-                </MainNav>
+                <Ul>
+                    <Li id='profile' isActive={tab === 'profile'} onClick={handleTabClick}>Profile</Li>
+                    <Li id='account' isActive={tab === 'account'} onClick={handleTabClick}>Account</Li>
+                    <Li id='price' isActive={tab === 'price'} onClick={handleTabClick}>Price Plans</Li>
+                </Ul>
             </nav>
             <Hr/>
             {tab === 'profile' ? <Profile/> : ''}

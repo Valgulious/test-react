@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import styled from "@emotion/styled";
-import check from '../../../img/check.svg'
+import check from '../../../../../img/check.svg'
 import {forwardRef} from "react";
 
 const NotificationsFormInput = forwardRef (({inputId, name, text, value, subtext, onChange}, ref) => {
