@@ -1,10 +1,12 @@
-import {forwardRef, useEffect} from "react";
+import {useEffect, useRef} from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
-const PhoneInput = forwardRef(({id, name, placeholder, isRequired}, ref) => {
+const PhoneInput = ({id, name, placeholder, isRequired}) => {
 
     const breakpoints = [576, 768, 992, 1430];
+
+    const inputRef = useRef(null);
 
     const mq = breakpoints.map(
         bp => `@media (min-width: ${bp}px)`
@@ -86,7 +88,7 @@ const PhoneInput = forwardRef(({id, name, placeholder, isRequired}, ref) => {
             }
         }
 
-        let input = ref.current;
+        let input = inputRef.current;
         let startPosition = input.selectionStart;
         let cursorPosition = startPosition - 1;
         let formatted = '';
@@ -165,7 +167,7 @@ const PhoneInput = forwardRef(({id, name, placeholder, isRequired}, ref) => {
 
     useEffect(() => {
 
-        const e = ref.current;
+        const e = inputRef.current;
 
         const format = (elem, eventType, event) => {
             let result = DoEntireFormat(event, eventType, elem.id, elem.value, elem.getAttribute('data-format'), elem.getAttribute('data-mask'));
@@ -189,15 +191,21 @@ const PhoneInput = forwardRef(({id, name, placeholder, isRequired}, ref) => {
         format(e)
     })
 
+    const handleFocus = (e) => {
+        const value = e.target.value;
+        const index = value.indexOf(' ');
+        if (-1 !== index) e.target.value = value.slice(0, index);
+    }
+
 
     return (
         <>
-            <Input ref={ref} id={id} name={name} type='text' placeholder={placeholder} required={isRequired}
-                   data-format="(***) ***-****" data-mask="(___) ___-____"/>
+            <Input ref={inputRef} id={id} name={name} type='text' placeholder={placeholder} required={isRequired}
+                   data-format="+*************" data-mask="+             " onFocus={handleFocus}/>
             <Label htmlFor={id}>{placeholder}</Label>
         </>
     )
-});
+}
 
 PhoneInput.propTypes = {
     id: PropTypes.string.isRequired,

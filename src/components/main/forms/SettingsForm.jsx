@@ -7,17 +7,16 @@ import Hr from '../../Hr.jsx'
 import Footer from "./Footer.jsx";
 import SubmitMessage from "./SubmitMessage.jsx";
 import PhoneInput from "./PhoneInput.jsx";
-import {useRef} from "react";
+import {useRef, useState} from "react";
 
 
 const SettingsForm = () => {
 
+    const [formReload, setFormReload] = useState(true);
+
     const firstNameRef = useRef(null);
     const lastNameRef = useRef(null);
     const emailRef = useRef(null);
-    const phoneNumberRef = useRef(null);
-    const cityRef = useRef(null);
-    const countryRef = useRef(null);
 
     const buttonRef = useRef(null);
     const submitMessageRef = useRef(null);
@@ -64,12 +63,7 @@ const SettingsForm = () => {
             submitMessageRef.current.textContent = 'Saved';
             submitMessageRef.current.style.color = 'green';
 
-            firstNameRef.current.value = '';
-            lastNameRef.current.value = '';
-            emailRef.current.value = '';
-            phoneNumberRef.current.value = '';
-            cityRef.current.value = '';
-            countryRef.current.value = '';
+            setFormReload(!formReload);
 
             buttonRef.current.disabled = true;
 
@@ -146,16 +140,14 @@ const SettingsForm = () => {
                         <InputSpan ref={emailSpanRef}>{''}</InputSpan>
                     </InputWrapper>
                     <InputWrapper>
-                        {/*<SettingsFormInput ref={phoneNumberRef} id='phoneNumber' name='phoneNumber' type='tel'*/}
-                        {/*                   placeholder='Phone Number' key='phone'/>*/}
-                        <PhoneInput ref={phoneNumberRef} id='phoneNumber' name='phoneNumber'
+                        <PhoneInput id='phoneNumber' name='phoneNumber'
                                     placeholder='Phone Number' key='phone'/>
                     </InputWrapper>
                     <InputWrapper>
-                        <SettingsFormInput ref={cityRef} id='city' name='city' type='text' placeholder='City' key='city'/>
+                        <SettingsFormInput id='city' name='city' type='text' placeholder='City' key='city'/>
                     </InputWrapper>
                     <InputWrapper>
-                        <SettingsFormInput ref={countryRef} id='country' name='country' type='text'
+                        <SettingsFormInput id='country' name='country' type='text'
                                            placeholder='Country' key='country'/>
                     </InputWrapper>
                 </Fieldset>

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import {forwardRef} from "react";
 
 
-const SettingsFormInput = forwardRef(({id, name, type, placeholder, isRequired, onChange, onBlur}, ref) => {
+const SettingsFormInput = forwardRef(({id, name, type, placeholder, value, isRequired, onChange, onBlur}, ref) => {
 
     const breakpoints = [576, 768, 992, 1430];
 
@@ -70,7 +70,7 @@ const SettingsFormInput = forwardRef(({id, name, type, placeholder, isRequired, 
     return (
         <>
             <Input ref={ref} id={id} name={name} type={type} placeholder={placeholder} required={isRequired}
-                   onChange={onChange} onBlur={onBlur}/>
+                   onChange={onChange} onBlur={onBlur} defaultValue={value}/>
             <Label htmlFor={id}>{placeholder}</Label>
         </>
     )
