@@ -1,10 +1,8 @@
 import styled from "@emotion/styled";
 import Profile from "./profile/Profile.jsx";
 import Hr from "../Hr.jsx"
-// import AnotherTab from "./AnotherTab.jsx";
-import {lazy, useState} from "react";
-
-const AnotherTab = lazy(() => import('./AnotherTab.jsx'));
+import AnotherTab from "./AnotherTab.jsx";
+import {useState} from "react";
 
 const MainWrapper = () => {
 
