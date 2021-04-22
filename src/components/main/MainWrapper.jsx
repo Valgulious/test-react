@@ -1,8 +1,10 @@
 import styled from "@emotion/styled";
 import Profile from "./Profile.jsx";
 import Hr from "../Hr.jsx"
-import AnotherTab from "./AnotherTab.jsx";
-import {useState} from "react";
+// import AnotherTab from "./AnotherTab.jsx";
+import {lazy, useState} from "react";
+
+const AnotherTab = lazy(() => import('./AnotherTab.jsx'));
 
 const MainWrapper = () => {
 
@@ -20,7 +22,7 @@ const MainWrapper = () => {
         }
     `
 
-    const MainNav = styled.nav`
+    const MainNav = styled.ul`
         display: flex;
         max-height: 40px;
     `
@@ -64,11 +66,13 @@ const MainWrapper = () => {
 
     return (
         <Main>
-            <MainNav>
-                <MainNavLi id='profile' isActive={tab === 'profile'} onClick={handleTabClick}>Profile</MainNavLi>
-                <MainNavLi id='account' isActive={tab === 'account'} onClick={handleTabClick}>Account</MainNavLi>
-                <MainNavLi id='price' isActive={tab === 'price'} onClick={handleTabClick}>Price Plans</MainNavLi>
-            </MainNav>
+            <nav>
+                <MainNav>
+                    <MainNavLi id='profile' isActive={tab === 'profile'} onClick={handleTabClick}>Profile</MainNavLi>
+                    <MainNavLi id='account' isActive={tab === 'account'} onClick={handleTabClick}>Account</MainNavLi>
+                    <MainNavLi id='price' isActive={tab === 'price'} onClick={handleTabClick}>Price Plans</MainNavLi>
+                </MainNav>
+            </nav>
             <Hr/>
             {tab === 'profile' ? <Profile/> : ''}
             {tab === 'account' ? <AnotherTab title='Account'/> : ''}

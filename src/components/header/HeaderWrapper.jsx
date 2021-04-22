@@ -28,6 +28,10 @@ const HeaderWrapper = () => {
         justify-content: space-around;
         align-items: center;
     `
+    const LogoImg = styled.img`
+      width: 36px;
+      height: 36px;
+    `
 
     const Title = styled.p`
         color: white;
@@ -42,7 +46,7 @@ const HeaderWrapper = () => {
         <Header>
             <a href="#">
                 <Logo>
-                    <img src={logo} alt="logo"/>
+                    <LogoImg src={logo} alt="logo"/>
                     <Title>Devias Kit</Title>
                 </Logo>
             </a>

@@ -126,6 +126,11 @@ const AsideWrapper = () => {
         }
     `
 
+    const NavIcon = styled.img`
+      width: 20px;
+      height: 20px;
+    `
+
     const MenuIcon = styled.img`
         display: none;
         position: absolute;
@@ -176,37 +181,39 @@ const AsideWrapper = () => {
                     <AsideHR/>
                     <ul>
                         <AsideLI>
-                            <img id='dash' src={dashboard} alt='dashboard'/>
+                            <NavIcon id='dash' src={dashboard} alt='dashboard'/>
                             <AsideListItem>Dashboard</AsideListItem>
                         </AsideLI>
                         <AsideLI>
-                            <img src={users} alt='users'/>
+                            <NavIcon src={users} alt='users'/>
                             <AsideListItem>Users</AsideListItem>
                         </AsideLI>
                         <AsideLI>
-                            <img src={products} alt='products'/>
+                            <NavIcon src={products} alt='products'/>
                             <AsideListItem>Products</AsideListItem>
                         </AsideLI>
                         <AsideLI>
-                            <img src={authentication} alt='authentication'/>
+                            <NavIcon src={authentication} alt='authentication'/>
                             <AsideListItem>Authentication</AsideListItem>
                         </AsideLI>
                         <AsideLI>
-                            <img src={typography} alt='typography'/>
+                            <NavIcon src={typography} alt='typography'/>
                             <AsideListItem>Typography</AsideListItem>
                         </AsideLI>
                         <AsideLI>
-                            <img src={icons_and_images} alt='icons_and_images'/>
+                            <NavIcon src={icons_and_images} alt='icons_and_images'/>
                             <AsideListItem>Icons & Images</AsideListItem>
                         </AsideLI>
                     </ul>
                     <AsideHR/>
                     <div>
                         <Support>Support</Support>
-                        <AsideLI>
-                            <img src={support} alt='support'/>
-                            <AsideListItem>Support</AsideListItem>
-                        </AsideLI>
+                        <ul>
+                            <AsideLI>
+                                <NavIcon src={support} alt='support'/>
+                                <AsideListItem>Support</AsideListItem>
+                            </AsideLI>
+                        </ul>
                     </div>
                 </AsideNav>
             </Aside>
