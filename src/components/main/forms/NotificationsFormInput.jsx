@@ -3,9 +3,7 @@ import styled from "@emotion/styled";
 import check from '../../../img/check.svg'
 import {forwardRef} from "react";
 
-const NotificationsFormInput = forwardRef ((props, ref) => {
-
-    const {inputId, name, text, value, subtext, onChange} = props;
+const NotificationsFormInput = forwardRef (({inputId, name, text, value, subtext, onChange}, ref) => {
 
     const Input = styled.input`
         position: absolute;

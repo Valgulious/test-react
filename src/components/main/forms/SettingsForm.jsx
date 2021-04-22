@@ -6,6 +6,7 @@ import FormButton from "./FormButton.jsx";
 import Hr from '../../Hr.jsx'
 import Footer from "./Footer.jsx";
 import SubmitMessage from "./SubmitMessage.jsx";
+import PhoneInput from "./PhoneInput.jsx";
 import {useRef} from "react";
 
 
@@ -145,8 +146,10 @@ const SettingsForm = () => {
                         <InputSpan ref={emailSpanRef}>{''}</InputSpan>
                     </InputWrapper>
                     <InputWrapper>
-                        <SettingsFormInput ref={phoneNumberRef} id='phoneNumber' name='phoneNumber' type='tel'
-                                           placeholder='Phone Number' key='phone'/>
+                        {/*<SettingsFormInput ref={phoneNumberRef} id='phoneNumber' name='phoneNumber' type='tel'*/}
+                        {/*                   placeholder='Phone Number' key='phone'/>*/}
+                        <PhoneInput ref={phoneNumberRef} id='phoneNumber' name='phoneNumber'
+                                    placeholder='Phone Number' key='phone'/>
                     </InputWrapper>
                     <InputWrapper>
                         <SettingsFormInput ref={cityRef} id='city' name='city' type='text' placeholder='City' key='city'/>
