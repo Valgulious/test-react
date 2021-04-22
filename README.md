@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##Environment requirements
+## Environment requirements
 
 Node version: `15.14.0` or later\
 NPM version: `7.9.0` or later
